@@ -1,14 +1,161 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>My Link</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dmg013 Hub</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(180deg, #0a0f1c, #0f172a);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* main container */
+.card {
+  width: 370px;
+  padding: 28px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  text-align: center;
+}
+
+/* title */
+h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+p {
+  margin-top: 6px;
+  opacity: 0.65;
+  font-size: 14px;
+}
+
+/* search */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 16px 0;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0,0,0,0.25);
+  color: white;
+  outline: none;
+  font-size: 14px;
+}
+
+/* buttons */
+button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 13px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* soft hover */
+button:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+/* subtle shine */
+button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.12);
+  transform: skewX(-20deg);
+  transition: 0.4s;
+}
+
+button:hover::after {
+  left: 120%;
+}
+
+/* styles */
+.doc {
+  background: linear-gradient(135deg, #00d4ff, #00ffcc);
+  color: #001018;
+}
+
+.games {
+  background: linear-gradient(135deg, #ff4d6d, #ffb703);
+  color: white;
+}
+
+.proxy {
+  background: linear-gradient(135deg, #7c3aed, #d946ef);
+  color: white;
+}
+
+/* footer */
+.footer {
+  margin-top: 14px;
+  font-size: 11px;
+  opacity: 0.45;
+}
+</style>
+
 </head>
+
 <body>
 
-<h1>Unblocked sites doc</h1>
-<a href="https://docs.google.com/document/d/1qfgAcu-p2OAMl_1P_olHOX3dca2l5l-EyXXYxMaXWlI/edit?usp=sharing">
-Click here to open the unblocked sites doc
-</a>
+<div class="card">
+  <h1>Dmg013</h1>
+  <p>Unblocked Hub</p>
+
+  <input type="text" id="search" onkeyup="filterButtons()" placeholder="Search tools...">
+
+  <a href="https://docs.google.com/document/d/1qfgAcu-p2OAMl_1P_olHOX3dca2l5l-EyXXYxMaXWlI/edit?usp=sharing" target="_blank">
+    <button class="doc">Unblocked Sites Doc</button>
+  </a>
+
+  <a href="#">
+    <button class="games">Games Page</button>
+  </a>
+
+  <a href="#">
+    <button class="proxy">Proxy Page</button>
+  </a>
+
+  <div class="footer">
+    Dmg013 Hub • GitHub Pages
+  </div>
+</div>
+
+<script>
+function filterButtons() {
+  let input = document.getElementById("search").value.toLowerCase();
+  let buttons = document.getElementsByTagName("button");
+
+  for (let i = 0; i < buttons.length; i++) {
+    let text = buttons[i].innerText.toLowerCase();
+    buttons[i].style.display = text.includes(input) ? "" : "none";
+  }
+}
+</script>
 
 </body>
 </html>
