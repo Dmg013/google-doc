@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proxy | Dmg013</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#0b1220;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.card{
+background:#111827;
+padding:30px;
+border-radius:20px;
+width:350px;
+text-align:center;
+box-shadow:0 0 30px rgba(0,0,0,0.6);
+}
+
+input{
+width:100%;
+padding:12px;
+margin-top:15px;
+border-radius:10px;
+border:none;
+outline:none;
+background:#1f2937;
+color:white;
+}
+
+button{
+margin-top:15px;
+padding:12px;
+width:100%;
+border:none;
+border-radius:10px;
+background:linear-gradient(135deg,#7c3aed,#d946ef);
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{
+opacity:.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h2>Proxy</h2>
+
+<input id="url" placeholder="Enter URL (https://example.com)">
+
+<button onclick="go()">Go</button>
+
+</div>
+
+<script>
+function go(){
+let url = document.getElementById("url").value
+window.location.href = url
+}
+</script>
+
+</body>
+</html>
